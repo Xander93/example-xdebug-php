@@ -1,0 +1,8 @@
+# Gebruik een PHP-image als basis
+FROM php:7.4-fpm
+
+# Installeer xdebug
+RUN pecl install xdebug
+
+# Kopieer het xdebug.ini-bestand naar de juiste locatie
+COPY xdebug.ini $PHP_INI_DIR/conf.d/

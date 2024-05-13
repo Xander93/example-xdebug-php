@@ -1,0 +1,23 @@
+services:
+  php:
+    image: php:7.4-fpm
+    volumes:
+      - ./php:/var/www/html
+    networks:
+      - app-network
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8888:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+      - ./php:/var/www/html
+    depends_on:
+      - php
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
