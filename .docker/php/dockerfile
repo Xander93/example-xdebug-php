@@ -2,7 +2,7 @@
 FROM php:7.4-fpm
 
 # Installeer xdebug
-RUN pecl install xdebug
+RUN pecl install xdebug-2.9.0
 
 # Kopieer het xdebug.ini-bestand naar de juiste locatie
 COPY xdebug.ini $PHP_INI_DIR/conf.d/
