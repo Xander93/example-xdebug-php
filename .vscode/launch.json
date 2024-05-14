@@ -5,12 +5,11 @@
             "name": "Listen for XDebug",
             "type": "php",
             "request": "launch",
-            // I changed the port, by default xdebug 3 uses 9003
-            "port": 5902,
+            "port": 9003,
             "pathMappings": {
                 "/var/www/my-app": "${workspaceFolder}"
             },
-            "hostname": "localhost"
-        },
+            "hostname": "host.docker.internal" // gebruik dit als je Docker for Windows/Mac gebruikt
+        }
     ]
 }
